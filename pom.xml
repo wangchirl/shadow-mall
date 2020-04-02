@@ -9,5 +9,16 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>renren-fast</module>
+        <module>shadow-order</module>
+        <module>renren-generator</module>
+        <module>shadow-common</module>
+        <module>shadow-coupon</module>
+        <module>shadow-member</module>
+        <module>shadow-ware</module>
+        <module>shadow-product</module>
+        <module>shadow-gateway</module>
+    </modules>
 
 </project>

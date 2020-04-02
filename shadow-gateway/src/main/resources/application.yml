@@ -1,0 +1,13 @@
+# 路由配置
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: baidu_route
+          uri: http://www.baidu.com
+          predicates:
+            - Query=url,baidu # localhost:8080?url=baidu
+        - id: qq_route
+          uri: http://www.qq.com
+          predicates:
+            - Query=url,qq # localhost:8080?url=qq
