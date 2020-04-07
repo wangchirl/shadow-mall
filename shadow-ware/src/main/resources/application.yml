@@ -11,14 +11,16 @@ spring:
     password: root
 # 每个微服务必须设置名称
   application:
-    name: shadowmall-ware
+    name: shadow-ware
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848  # nacos服务注册中心地址
+        server-addr: 192.168.56.10:8848  # nacos服务注册中心地址
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml # mapper.xml文件位置
   global-config:
     db-config:
       id-type: auto # 自增主键
-
+logging:
+  level:
+    com.shadow.mall.ware: debug

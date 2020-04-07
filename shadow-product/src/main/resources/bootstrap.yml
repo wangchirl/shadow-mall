@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        namespace: eb8a45a6-daf8-4689-8f54-16392178217c
+        server-addr: localhost:8848
+  application:
+    name: shadow-product

@@ -1,15 +1,15 @@
-package com.shadow.mall;
+package com.shadow.mall.third;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
 @EnableDiscoveryClient
-public class ShadowWareApplication {
+@SpringBootApplication
+public class ShadowThirdPartyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ShadowWareApplication.class, args);
+        SpringApplication.run(ShadowThirdPartyApplication.class, args);
     }
 
 }

@@ -19,6 +19,7 @@
         <module>shadow-ware</module>
         <module>shadow-product</module>
         <module>shadow-gateway</module>
+        <module>shadow-third-party</module>
     </modules>
 
 </project>

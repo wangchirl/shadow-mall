@@ -1,13 +1,35 @@
-# 路由配置
+# 路由配置 精确路由配置靠前 - important
 spring:
   cloud:
     gateway:
       routes:
-        - id: baidu_route
-          uri: http://www.baidu.com
+### product route
+        - id: product_route
+          uri: lb://shadow-product
           predicates:
-            - Query=url,baidu # localhost:8080?url=baidu
-        - id: qq_route
-          uri: http://www.qq.com
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /$\{segment} # 路径重写
+### OSS 签名直传服务路由
+        - id: third_party_route
+          uri: lb://shadow-third-party
           predicates:
-            - Query=url,qq # localhost:8080?url=qq
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty(?<segment>/?.*), /$\{segment} # 路径重写
+### renren-fast route
+        - id: admin_fast
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /renren-fast/$\{segment} # 路径重写
+            - AddResponseHeader=X-Response-Red, Blue
+
+
+### 前端项目 /api
+### localhost:88/api/xxx.jpg  ===> localhost:88/renren-fast/xx.jpg
+
+### 跨域问题 config.CorsConfig
+
+### renren-fast 也配置了跨域，注释吊renren-fast中的配置

@@ -1,0 +1,19 @@
+
+spring:
+# 每个微服务必须设置名称
+  application:
+    name: shadow-third-party
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos服务注册中心地址
+
+    alicloud: # OSS配置
+        access-key: LTAI4Fc1uRrRjBSPD9YGaFep
+        secret-key: 5QSzN7uHD2sKb108ovtPsDZsVA4kG0
+        oss:
+            endpoint: oss-cn-shanghai.aliyuncs.com
+            bucket:  shadowmall-hello #自定义bucket名称
+
+server:
+  port: 30000

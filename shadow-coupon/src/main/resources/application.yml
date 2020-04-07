@@ -11,7 +11,7 @@ spring:
     password: root
 # 每个微服务必须设置名称
   application:
-    name: shadowmall-coupon
+    name: shadow-coupon
   cloud:
     nacos:
       discovery:
